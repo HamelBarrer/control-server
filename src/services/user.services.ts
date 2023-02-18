@@ -1,6 +1,40 @@
 import { PrismaClient } from '@prisma/client';
+import { Authentication } from '../interfaces/authentication.interface';
 import { User, UserCreate } from '../interfaces/user.interface';
 import { creationHash } from '../utils/hash';
+
+export const getUserUsernameOrEmail = async (
+  authentication: Authentication
+) => {
+  try {
+    const prisma = new PrismaClient();
+
+    const user = await prisma.user.findFirst({
+      where: {
+        OR: [
+          {
+            email: authentication.account,
+          },
+          {
+            username: authentication.account,
+          },
+        ],
+      },
+      select: {
+        user_id: true,
+        username: true,
+        email: true,
+        password: true,
+      },
+    });
+
+    if (!user) return null;
+
+    return user;
+  } catch (error) {
+    return null;
+  }
+};
 
 export const readUser = async (userId: number): Promise<User | null> => {
   try {

@@ -9,6 +9,7 @@ specifiers:
   argon2: ^0.30.3
   cors: ^2.8.5
   express: ^4.18.2
+  jose: ^4.12.0
   morgan: ^1.10.0
   prisma: ^4.10.1
   ts-node-dev: ^2.0.0
@@ -19,6 +20,7 @@ dependencies:
   argon2: 0.30.3
   cors: 2.8.5
   express: 4.18.2
+  jose: 4.12.0
   prisma: 4.10.1
 
 devDependencies:
@@ -692,6 +694,10 @@ packages:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
     dev: true
+
+  /jose/4.12.0:
+    resolution: {integrity: sha512-wW1u3cK81b+SFcHjGC8zw87yuyUweEFe0UJirrXEw1NasW00eF7sZjeG3SLBGz001ozxQ46Y9sofDvhBmWFtXQ==}
+    dev: false
 
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
