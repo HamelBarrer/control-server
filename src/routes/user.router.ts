@@ -6,11 +6,12 @@ import {
   createUser,
   updateUser,
 } from '../controllers/user.controller';
+import { validationUser } from '../middleware/validationUser';
 
 const router = Router();
 
 router.get('/:userId', getUser);
-router.get('/', getUsers);
+router.get('/', validationUser, getUsers);
 router.post('/', createUser);
 router.put('/:userId', updateUser);
 
