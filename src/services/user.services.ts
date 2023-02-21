@@ -68,6 +68,7 @@ export const readUsers = async (): Promise<User[] | null> => {
         user_id: true,
         username: true,
         email: true,
+        created_at: true,
       },
     });
 
@@ -96,6 +97,7 @@ export const insertUser = async (user: UserCreate): Promise<User | null> => {
         user_id: true,
         username: true,
         email: true,
+        created_at: true,
       },
     });
 

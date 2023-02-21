@@ -15,5 +15,7 @@ export const validationUser = async (
   if (!userId)
     return res.status(404).json({ message: 'Information not found' });
 
+  req.userId = userId;
+
   return next();
 };

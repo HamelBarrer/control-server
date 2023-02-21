@@ -14,5 +14,10 @@ export const login = async ({ body }: Request, res: Response) => {
 
   const jwt = await createToken(user.user_id);
 
-  return res.status(200).json({ jwt });
+  return res.status(200).json({
+    jwt,
+    user_id: user.user_id,
+    username: user.username,
+    email: user.email,
+  });
 };
